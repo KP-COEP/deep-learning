@@ -209,7 +209,7 @@ def test_sentence_to_seq(sentence_to_seq):
 def test_process_decoding_input(process_decoding_input):
     batch_size = 2
     seq_length = 3
-    target_vocab_to_int = {'<GO>': 3}
+    target_vocab_to_int = {'<EOS>': 1, '<GO>': 3}
     with tf.Graph().as_default():
         target_data = tf.placeholder(tf.int32, [batch_size, seq_length])
         dec_input = process_decoding_input(target_data, target_vocab_to_int, batch_size)
